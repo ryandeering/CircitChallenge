@@ -86,7 +86,6 @@ public class CurrentWeatherTests
         var okResult = Assert.IsType<OkObjectResult>(result);
         Assert.IsType<CurrentWeather>(okResult
             .Value);
-        //Assert.Equal<CurrentWeather>(testCurrentWeather, (CurrentWeather)okResult.Value); 
         //https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/testing?view=aspnetcore-6.0
     }
 

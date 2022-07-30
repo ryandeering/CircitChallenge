@@ -1,5 +1,5 @@
-﻿// <copyright file="Current.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// <copyright file="Current.cs" company="RD Inc">
+// Copyright (c) RD Inc. All rights reserved.
 // </copyright>
 
 namespace CircitChallenge.DataModel.Entities.CurrentWeather

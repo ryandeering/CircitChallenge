@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="C:\Users\Ryan\source\repos\CircitChallenge\CircitChallenge\CircitChallenge.API\stylecop.json" Link="stylecop.json" />
+    <AdditionalFiles Include="C:\Users\Ryan\source\repos\CircitChallenge\CircitChallenge\CircitChallenge.API\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>

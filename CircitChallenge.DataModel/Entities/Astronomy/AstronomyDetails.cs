@@ -1,5 +1,5 @@
 ﻿// <copyright file="AstronomyDetails.cs" company="RD Inc">
-// Copyright (c) RD Inc All rights reserved.
+// Copyright (c) RD Inc. All rights reserved.
 // </copyright>
 
 namespace CircitChallenge.DataModel.Entities.Astronomy

@@ -64,7 +64,6 @@ public class AstronomyControllerTests
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
         Assert.IsType<Astronomy>(okResult.Value);
-        //Assert.Equal<Astronomy>(testAstronomy, (Astronomy)okResult.Value); 
         //https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/testing?view=aspnetcore-6.0
     }
 

@@ -1,4 +1,4 @@
-﻿// <copyright file="AstronomyInner.cs" company="RD Inc.">
+﻿// <copyright file="AstronomyInner.cs" company="RD Inc">
 // Copyright (c) RD Inc. All rights reserved.
 // </copyright>
 

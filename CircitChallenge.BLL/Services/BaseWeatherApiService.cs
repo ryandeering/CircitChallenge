@@ -15,7 +15,7 @@ public class BaseWeatherApiService : IBaseWeatherApiService
     /// <summary>
     /// Initializes a new instance of the <see cref="BaseWeatherApiService"/> class.
     /// </summary>
-    /// <param name="httpClient">HttpClient to be injected into service, configured in Program.cs</param>
+    /// <param name="httpClient">HttpClient to be injected into service, configured in Program.cs.</param>
     public BaseWeatherApiService(HttpClient httpClient)
     {
         this.httpClient = httpClient;
