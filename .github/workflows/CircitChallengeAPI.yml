@@ -2,7 +2,7 @@ name: Build and deploy .NET Core app to Windows WebApp CircitChallengeAPI
 on:
   push:
     branches:
-    - frontendwork
+    - main
 env:
   AZURE_WEBAPP_NAME: CircitChallengeAPI
   AZURE_WEBAPP_PACKAGE_PATH: CircitChallenge.API/publish
