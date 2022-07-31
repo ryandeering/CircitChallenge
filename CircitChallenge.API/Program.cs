@@ -21,6 +21,8 @@ builder.Services.AddHttpClient<IBaseWeatherApiService, BaseWeatherApiService>(c 
     c.DefaultRequestHeaders.Add("X-RapidAPI-Key", configuration["APIConfig:APIKey"]);
 });
 
+builder.Services.AddCors();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -35,5 +37,13 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors(builder =>
+{
+    builder
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+});
 
 app.Run();

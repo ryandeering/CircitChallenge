@@ -1,46 +1,24 @@
 <template>
     <div class="post">
-        <div v-if="loading" class="loading">
+        <div v-if="loading === 'true'" class="loading">
             Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationvue">https://aka.ms/jspsintegrationvue</a> for more details.
         </div>
-
-        <div v-if="post" class="content">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Temp. (C)</th>
-                        <th>Temp. (F)</th>
-                        <th>Summary</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="forecast in post" :key="forecast.date">
-                        <td>{{ forecast.date }}</td>
-                        <td>{{ forecast.temperatureC }}</td>
-                        <td>{{ forecast.temperatureF }}</td>
-                        <td>{{ forecast.summary }}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div v-else class="content">
+            <h3>{{post.region}}</h3>
         </div>
+		
+		<div class="alert alert-primary" role="alert">
+		A simple primary alert—check it out!
+		</div>
     </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
     import { defineComponent } from 'vue';
-
-    type Forecasts = {
-        date: string
-    }[];
-
-    interface Data {
-        loading: boolean,
-        post: null | Forecasts
-    }
+    import axios from "axios";
 
     export default defineComponent({
-        data(): Data {
+        data() {
             return {
                 loading: false,
                 post: null
@@ -56,17 +34,11 @@
             '$route': 'fetchData'
         },
         methods: {
-            fetchData(): void {
-                this.post = null;
+            async fetchData() {
                 this.loading = true;
-
-                fetch('weatherforecast')
-                    .then(r => r.json())
-                    .then(json => {
-                        this.post = json as Forecasts;
-                        this.loading = false;
-                        return;
-                    });
+                this.post = null;
+                const res = await axios.get('https://localhost:7094/api/timezone?city=Dublin');
+                this.post = res.data.location;
             }
         },
     });
