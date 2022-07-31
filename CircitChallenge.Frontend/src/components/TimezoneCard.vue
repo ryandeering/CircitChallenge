@@ -6,19 +6,18 @@
           <div class="col-md-8 col-lg-6 col-xl-4">
             <div class="card shadow-0 border">
               <div class="card-body p-4">
-                <h5>Weather:</h5>
+                <h5>Timezone:</h5>
                 <p class="mb-2">
-                  Current temperature:
-                  <strong>{{ weatherData.current.temp_c }}°C</strong>
+                  TZ Database ID 🗺️:
+                  <strong>{{ timezoneData.location.localtime_epoch }}</strong>
                 </p>
                 <p>
-                  Feels like:
-                  <strong>{{ weatherData.current.feelslike_c }}°C</strong>
+                  Local Time 🕑:
+                  <strong>{{ timezoneData.location.localtime }}</strong>
                 </p>
-                <img v-bind:src="weatherData.current.condition.icon" />
                 <p>
-                  Conditions: <strong>{{ weatherData.current.condition.text }}.</strong> 
-                  Winds at <strong>{{ weatherData.current.wind_kph }}kph.</strong> 
+                  Local Unix Time Epoch 🤓:
+                  <strong>{{ timezoneData.location.localtime_epoch }}</strong>
                 </p>
               </div>
             </div>
@@ -32,7 +31,7 @@
 <script>
 export default {
   props: {
-    weatherData: Object,
+    timezoneData: Object,
   },
 };
 </script>
