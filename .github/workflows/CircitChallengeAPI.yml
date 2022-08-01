@@ -1,4 +1,4 @@
-name: Build and deploy .NET Core app to Windows WebApp CircitChallengeAPI
+name: Build and deploy CircitChallenge backend
 on:
   push:
     branches:
@@ -9,7 +9,7 @@ env:
   AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.CircitChallengeAPI_ca10 }}
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 6.0.x
-  WORKING_DIRECTORY: CircitChallenge.API
+  WORKING_DIRECTORY: CircitChallenge
 jobs:
   build-and-deploy:
     runs-on: windows-latest
@@ -20,13 +20,15 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
     - name: Restore
-      run: dotnet restore "${{ env.WORKING_DIRECTORY }}"
+      run: dotnet restore
     - name: Build
-      run: dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
-    - name: Test
-      run: dotnet test "${{ env.WORKING_DIRECTORY }}" --no-build
+      run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore
+    - name: Unit Testing
+      run: dotnet test CircitChallenge.UnitTests --no-build
+    - name: Integration Testing
+      run: dotnet test CircitChallenge.IntegrationTests --no-build
     - name: Publish
-      run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
+      run: dotnet publish "CircitChallenge.API" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
     - name: Deploy to Azure WebApp
       uses: azure/webapps-deploy@v2
       with:
