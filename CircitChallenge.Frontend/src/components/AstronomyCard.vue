@@ -17,7 +17,7 @@
                 </p>
                 <p class="mb-2">
                   Moon Phase 🌝:
-                  <strong>{{ astronomyData.astronomy.astro.moon_phase}}</strong>
+                  <strong>{{ astronomyData.astronomy.astro.moon_phase }}</strong>
                 </p>
               </div>
             </div>

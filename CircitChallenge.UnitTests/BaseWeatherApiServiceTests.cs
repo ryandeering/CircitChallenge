@@ -16,7 +16,7 @@ public class BaseWeatherApiServiceTests
     }
 
     [Fact]
-    public async Task When_GetAsync_Is_Called_Returns_OkStatus()
+    public async Task GetAsync_ReturnsOkResult()
     {
         //Arrange
         var validUri = "https://httpstat.us/200";
@@ -29,7 +29,7 @@ public class BaseWeatherApiServiceTests
     }
 
     [Fact]
-    public async Task When_GetAsync_Is_Called_Returns_NotFoundStatus()
+    public async Task GetAsync_ReturnsNotFound()
     {
         //Arrange
         var validUri = "https://httpstat.us/404";

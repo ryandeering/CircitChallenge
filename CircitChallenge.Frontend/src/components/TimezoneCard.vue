@@ -9,7 +9,7 @@
                 <h5>Timezone:</h5>
                 <p class="mb-2">
                   TZ Database ID 🗺️:
-                  <strong>{{ timezoneData.location.localtime_epoch }}</strong>
+                  <strong>{{ timezoneData.location.tz_id }}</strong>
                 </p>
                 <p>
                   Local Time 🕑:

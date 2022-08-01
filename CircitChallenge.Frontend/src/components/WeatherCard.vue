@@ -17,8 +17,8 @@
                 </p>
                 <img v-bind:src="weatherData.current.condition.icon" />
                 <p>
-                  Conditions: <strong>{{ weatherData.current.condition.text }}.</strong> 
-                  Winds at <strong>{{ weatherData.current.wind_kph }}kph.</strong> 
+                  Conditions: <strong>{{ weatherData.current.condition.text }}.</strong>
+                  Winds at <strong>{{ weatherData.current.wind_kph }}kph.</strong>
                 </p>
               </div>
             </div>

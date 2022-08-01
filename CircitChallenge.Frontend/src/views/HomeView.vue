@@ -1,35 +1,36 @@
 <template>
-    <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
-            <a class="navbar-brand" href="#!">Circit Challenge - Ryan Deering</a>
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#!">Circit Challenge - Ryan Deering</a>
+    </div>
+  </nav>
+
+  <section class="vh-10">
+    <div class="container py-5 h-20">
+      <div class="row d-flex justify-content-center align-items-center h-30">
+        <div class="col-md-4 col-lg-6 col-xl-4">
+          <VueMultiselect v-model="selected" :options="cities" :allow-empty="false"
+            deselect-label="Can't remove this value">
+          </VueMultiselect>
         </div>
-    </nav>
-
-    <section class="vh-10">
-        <div class="container py-5 h-20">
-            <div class="row d-flex justify-content-center align-items-center h-30">
-                <div class="col-md-4 col-lg-6 col-xl-4">
-                    <VueMultiselect v-model="selected" :options="cities" :allow-empty="false" deselect-label="Can't remove this value">
-                    </VueMultiselect>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div v-if="allData.weatherData">
-        <h4 class="mb-1 sfw-normal">
-            {{ allData.weatherData.location.name }}, {{ allData.weatherData.location.country }}
-        </h4>
-        <WeatherCard :weatherData="allData.weatherData" />
+      </div>
     </div>
+  </section>
 
-    <div v-if="allData.astronomyData">
-        <AstronomyCard :astronomyData="allData.astronomyData" />
-    </div>
+  <div v-if="allData.weatherData">
+    <h4 class="mb-1 sfw-normal">
+      {{ allData.weatherData.location.name }}, {{ allData.weatherData.location.country }}
+    </h4>
+    <WeatherCard :weatherData="allData.weatherData" />
+  </div>
 
-    <div v-if="allData.timezoneData">
-        <TimezoneCard :timezoneData="allData.timezoneData" />
-    </div>
+  <div v-if="allData.astronomyData">
+    <AstronomyCard :astronomyData="allData.astronomyData" />
+  </div>
+
+  <div v-if="allData.timezoneData">
+    <TimezoneCard :timezoneData="allData.timezoneData" />
+  </div>
 
 
 
@@ -55,10 +56,10 @@ export default {
     return {
       cities: ["Dublin", "Tokyo", "Berlin"],
       selected: "Dublin",
-      allData:{
-      weatherData: {},
-      astronomyData: {},
-      timezoneData: {}
+      allData: {
+        weatherData: {},
+        astronomyData: {},
+        timezoneData: {}
       }
     };
   },
@@ -76,14 +77,14 @@ export default {
       this.getTimezone(cityName);
 
     },
-      async getWeather(cityName) {
+    async getWeather(cityName) {
       this.allData.weatherData = null;
       const res = await axios.get(
         `currentweather?city=${cityName}`
       );
       this.allData.weatherData = res.data;
     },
-      async getAstronomy(cityName) {
+    async getAstronomy(cityName) {
       this.allData.astronomyData = null;
       const res = await axios.get(
         `astronomy?city=${cityName}`
@@ -107,26 +108,27 @@ export default {
   },
 };</script>
 
-<style src="vue-multiselect/dist/vue-multiselect.css"></style>
+<style src="vue-multiselect/dist/vue-multiselect.css">
+</style>
 <style>
-    #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-    }
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-    nav {
-        padding: 30px;
-    }
+nav {
+  padding: 30px;
+}
 
-        nav a {
-            font-weight: bold;
-            color: #2c3e50;
-        }
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
 
-            nav a.router-link-exact-active {
-                color: #42b983;
-            }
+nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>

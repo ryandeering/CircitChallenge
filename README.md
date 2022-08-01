@@ -18,31 +18,33 @@ https://circitchallengeapi.azurewebsites.net/api/ - API hosted on Azure App Serv
 * CI/CD pipeline for backend API
 * Unit and Integration testing with Moq and xUnit
 
+<h1>Building Locally</h1>
+
+To build the project, run the following commands in the root folder of the repo:
+
+> dotnet restore
+
+> dotnet build
+
 <h1>Running Locally - Backend</h1>
 
-To build and run the backend, go to the root folder when cloned and open a command prompt in the CircitChallenge.API folder:
+To run the backend, from the root folder navigate to CircitChallenge.API.
 
-Run the following commands in this order.
+Open the command prompt and run the following command:
 
->dotnet restore
+> dotnet run
 
->dotnet build
-
->dotnet run
-
-If successful, you should see a prompt that the API has been built and running on ports 7094 and 5094 respectively.
+If successful, you should see a prompt that the API has been built and running on ports 5001 and 5003 respectively.
 
 <h1>Running Locally - Frontend</h1>
 
-To build and run the frontend, go to the root folder when cloned and open a command prompt in the CircitChallenge.Frontend folder:
+To run the frontend, from the root folder navigate to CircitChallenge.Frontend:
 
-Run the following commands in this order.
+Open the command prompt and run the following command:
 
->npm install
+> npm run serve
 
->npm run serve
+If successful, you should see a prompt that the frontend has been built and running on port 7094.
 
-If successful, you should see a prompt that the frontend has been built and running on ports 5002.
-
-Feel free to navigate to https://localhost:5002/ and you should see data pour in similar to the gif on this README.md.
+Feel free to navigate to https://localhost:7094/ and you should see data pour in similar to the gif on this README.md.
 
