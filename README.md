@@ -3,7 +3,7 @@
 
 ![example workflow](https://github.com/ryandeering/CircitChallenge/actions/workflows/CircitChallengeAPI.yml/badge.svg)
 
-<img src="https://github.com/ryandeering/albumtrackr/blob/main/docs/demo.gif" alt="Demo gif" title="Demo gif" width="400"/>
+<img src="https://github.com/ryandeering/circitchallenge/blob/main/docs/demo.gif" alt="Demo gif" title="Demo gif" width="800"/>
 
 <h1>Online Links</h1>
 
