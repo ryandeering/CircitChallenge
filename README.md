@@ -1,5 +1,5 @@
 <h1>CircitChallenge</h1>
-<p>A single page application built with Vue.js and .NET Core Web API displaying different cities' weather & other info. </p>
+<p>A single page application built with Vue.js and .NET Core Web API displaying different cities' weather & other info. This was created for my job application for Circit. </p>
 
 ![example workflow](https://github.com/ryandeering/CircitChallenge/actions/workflows/CircitChallengeAPI.yml/badge.svg)
 
